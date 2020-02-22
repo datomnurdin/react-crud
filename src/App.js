@@ -29,7 +29,7 @@ class App extends React.Component{
   }
 
   loadUser(){
-    axios.get('http://localhost:3000/users').then((response) => {
+    axios.get('https://nodejs-restful-api-my.herokuapp.com/users').then((response) => {
       console.log(response.data)
       this.setState({
         users: response.data
@@ -54,7 +54,7 @@ class App extends React.Component{
   }
 
   addUser(){
-    axios.post('http://localhost:3000/user', this.state.newUserData).then((response) => {
+    axios.post('https://nodejs-restful-api-my.herokuapp.com/user', this.state.newUserData).then((response) => {
       let {users} = this.state;
       this.loadUser()
 
@@ -72,7 +72,7 @@ class App extends React.Component{
   updateUser(){
     let { userId, username, email, phone_number, skillsets, hobby } = this.state.editUserData
 
-    axios.put("http://localhost:3000/user", { 
+    axios.put("https://nodejs-restful-api-my.herokuapp.com/user", { 
       userId,
       username,
       email,
@@ -101,7 +101,7 @@ class App extends React.Component{
   }
 
   deleteUser(userId){
-    axios.delete("http://localhost:3000/user/"+userId).then((response) => {
+    axios.delete("https://nodejs-restful-api-my.herokuapp.com/user/"+userId).then((response) => {
       this.loadUser()
     })
   }
