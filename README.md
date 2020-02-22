@@ -1,6 +1,6 @@
 # react-crud
 
-RESTful API using Node.JS
+CRUD app with React.js.
 
 ### Prerequisites
 
